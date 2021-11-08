@@ -46,7 +46,7 @@ const BtnConsulta = ({idConsulta}) => {
         <Fragment>
             <div className="text-center">
                 <button
-                    type="button" className="btn-lg text-align:center btn btn-success "
+                    type="button" className="btn-lg text-align:center btn btn-success rounded-pill "
                     onClick = {() => consultar()}
                 >Consultar
                 </button>
