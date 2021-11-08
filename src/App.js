@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import { Fragment, useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import { CategoriasList } from './components/CategoriasList';
+
+
+
 
 function App() {
+
+  const [categoriasState, setCategorias] = useState([]);
+
+// funcion para cargar la lista de categorias disponibles en la api al iniciar la app  
+  const fetchCategories = async () => {
+    const api = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+    const categorias = await api.json();
+    setCategorias(categorias.categories);
+  }
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <Fragment>
+      <div>  
+
+        <Header />
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Selecciona alguna categoria, o deja que la suerte se encargue
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <CategoriasList categorias={categoriasState}/>  
+
+      </div>
+    </Fragment>
   );
 }
 
