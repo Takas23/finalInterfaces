@@ -21,6 +21,7 @@ function App() {
     fetchCategories()
   }, [])
 
+  
   return (
     <Fragment>
       <div>  
