@@ -20,11 +20,20 @@ export function CategoriasList({categorias}) {
 
     };
 
-    //falta desactivar los botones
+    //funcion para limpiar la lista de categorias, pone id en random, y desactiva botones
     const clearCategories = () => {
-        var selecciones = document.querySelectorAll('button');
         setActiveCategories([]);
         setIdConsulta(0);
+        if (document.getElementsByClassName('active').length) {
+            clearButtons();
+        }
+        
+    }
+
+    const clearButtons = () => {
+        var buttons = document.getElementsByClassName('active');
+        buttons[0].classList.remove('active')
+        if (buttons[0]) clearButtons();
     }
 
 // no carga el id al tocar la primer categoria
@@ -67,6 +76,9 @@ export function CategoriasList({categorias}) {
 
     return (
     <Fragment>
+        <p className="px-2 lead">
+          Seleccione alguna categoría, o déjelo a la suerte.
+        </p>
         <nav>
             {categorias.map((c) => (
                 <button key={c.strCategory} type="button" id={c.strCategory}
@@ -77,10 +89,11 @@ export function CategoriasList({categorias}) {
                 </button>      
             ))}
             <button
+                className="btn btn-outline-danger"
                 onClick={() => clearCategories()}
             >Limpiar seleccion
             </button>
-        </nav>
+        </nav><br/>
 
        <BtnConsulta idConsulta = { idConsulta }/>
 

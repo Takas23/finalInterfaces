@@ -21,16 +21,12 @@ function App() {
     fetchCategories()
   }, [])
 
-  
-  return (
-    <Fragment>
-      <div>  
 
+  return (
+    <Fragment >
+      <div>  
         <Header />
 
-        <p>
-          Selecciona alguna categoria, o deja que la suerte se encargue
-        </p>
         <CategoriasList categorias={categoriasState}/>  
 
       </div>

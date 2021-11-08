@@ -30,16 +30,27 @@ const BtnConsulta = ({idConsulta}) => {
   
 
     function consultar() {
-        idConsulta != 0 ? consultarPorId(idConsulta) : consultarRandom();
+        idConsulta !== 0 ? consultarPorId(idConsulta) : consultarRandom();
+        if (document.getElementsByClassName('invisible').length) {
+            mostrarElementos();
+        }
     }
 
+    const mostrarElementos = () => {
+        var elementos = document.getElementsByClassName('invisible');
+        elementos[0].classList.remove('invisible')
+        if (elementos[0]) mostrarElementos();
+    }
 
     return (
         <Fragment>
-            <button
-                onClick = {() => consultar()}
-            >Consultar
-            </button>
+            <div className="text-center">
+                <button
+                    type="button" className="btn-lg text-align:center btn btn-success "
+                    onClick = {() => consultar()}
+                >Consultar
+                </button>
+            </div><br/>
 
             <Comida comidaProp={comidaState}/>
         </Fragment>
