@@ -18,6 +18,7 @@ const BtnConsulta = ({idConsulta}) => {
         }
     }
 
+// consulta plato random
     const consultarRandom = async () => {
         try {
             const api = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -28,7 +29,7 @@ const BtnConsulta = ({idConsulta}) => {
         }
     }
   
-
+// si el id no es cero hace el pedido por id
     function consultar() {
         idConsulta !== 0 ? consultarPorId(idConsulta) : consultarRandom();
         if (document.getElementsByClassName('invisible').length) {
@@ -36,6 +37,7 @@ const BtnConsulta = ({idConsulta}) => {
         }
     }
 
+// activa los elementos invisibles
     const mostrarElementos = () => {
         var elementos = document.getElementsByClassName('invisible');
         elementos[0].classList.remove('invisible')
@@ -46,7 +48,7 @@ const BtnConsulta = ({idConsulta}) => {
         <Fragment>
             <div className="text-center">
                 <button
-                    type="button" className="btn-lg text-align:center btn btn-success rounded-pill "
+                    type="button" className="text-uppercase btn-lg text-align:center btn btn-success rounded-pill bg-gradient shadow"
                     onClick = {() => consultar()}
                 >Consultar
                 </button>

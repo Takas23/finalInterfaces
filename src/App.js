@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Fragment >
-      <div>  
+      <div style={{position: "relative", minHeight: '100vh'}}>  
         <Header />
 
         <CategoriasList categorias={categoriasState}/>  

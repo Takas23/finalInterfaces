@@ -10,11 +10,14 @@ const Comida = ({comidaProp}) => {
                 alt='imagen de plato'
                 width="200"></img><br/>
             
-            <h3 className="display-4">{comidaProp.strMeal}  </h3><br/>
+            <h3 className="display-4">{comidaProp.strMeal}<br/>  
+                <small className="text-muted"> ( {comidaProp.strArea} )
+                </small>
+            </h3><br/>
             
-            <h4 className="invisible text-uppercase" >Receta</h4><br/>
+            <h4 className="invisible text-uppercase" >Receta  &#9997;</h4><br/>
             
-            <p>
+            <p className="container border bg-secondary bg-opacity-10">
                 {comidaProp.strInstructions}
             </p>
 
