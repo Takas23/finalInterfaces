@@ -86,7 +86,7 @@ export function CategoriasList({categorias}) {
             </p>
             <nav>
                 {categorias.map((c) => (
-                    <button key={c.strCategory} type="button" id={c.strCategory}
+                    <button key={c.strCategory} type="button" 
                         className="btn btn-outline-primary" 
                         data-bs-toggle="button" 
                         onClick={() => toggle(c.strCategory, getId)}

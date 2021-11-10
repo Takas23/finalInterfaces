@@ -11,7 +11,7 @@ const Comida = ({comidaProp}) => {
                 width="200"></img><br/>
             
             <h3 className="display-4">{comidaProp.strMeal}<br/>  
-                <small className="text-muted"> ( {comidaProp.strArea} )
+                <small className="text-muted invisible"> ( {comidaProp.strArea} )
                 </small>
             </h3><br/>
             
