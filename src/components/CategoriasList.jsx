@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Fragment } from 'react';
 import BtnConsulta from './BtnConsulta';
 
@@ -6,6 +6,14 @@ export function CategoriasList({categorias}) {
 
     const [activeCategories, setActiveCategories] = useState([]);
     const [idConsulta, setIdConsulta] = useState(0);
+
+    useEffect(() => {
+        function getId() {
+            activeCategories.length > 0 ? consultarEn(activeCategories) : setIdConsulta(0);
+        }
+        getId();
+    }, [activeCategories])   
+
  /*
     var idConsulta = 0;
 
@@ -45,17 +53,18 @@ export function CategoriasList({categorias}) {
 
 
 // funcion para activar o desactivar las categorias en donde se realiza la busqueda
-    function toggle(cat, callback) {
+//a    function toggle(cat, callback) {
+    function toggle(cat) {
         activeCategories.includes(cat) ? removeCategory(cat) : addCategory(cat);
-        callback();
+ //a       callback();
     }
-
+/*
 // consulta un id random de las categorias o pone el id en 0
     function getId() {
         activeCategories.length > 0 ? consultarEn(activeCategories) : setIdConsulta(0);
 
     }
-
+*/
 
         
 
@@ -84,13 +93,13 @@ export function CategoriasList({categorias}) {
             <p className="px-2 lead">
             Seleccione alguna categoría, o déjelo a la suerte. &#127869;
             </p>
-            <nav>
+            <nav className="text-center">
                 {categorias.map((c) => (
                     <button key={c.strCategory} type="button" 
                         className="btn btn-outline-primary" 
                         data-bs-toggle="button" 
-                        onClick={() => toggle(c.strCategory, getId)}
-
+ // a                      onClick={() => toggle(c.strCategory, getId)}
+                        onClick={() => toggle(c.strCategory)}
                     >{c.strCategory}
                     </button>      
                 ))}

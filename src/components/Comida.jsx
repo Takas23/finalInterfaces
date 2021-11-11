@@ -17,8 +17,8 @@ const Comida = ({comidaProp}) => {
             
             <h4 className="invisible text-uppercase" >Receta  &#9997;</h4><br/>
             
-            <p className="container border bg-secondary bg-opacity-10">
-                {comidaProp.strInstructions}
+            <p id="receta" className="container border bg-secondary bg-opacity-10" 
+                > {comidaProp.strInstructions}
             </p>
 
             <p>datos de control. id: {comidaProp.idMeal} - cat: {comidaProp.strCategory}</p>
