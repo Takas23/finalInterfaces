@@ -8,7 +8,8 @@ import icoIg from '../image/icoIg.png';
 const Footer = () => {
     return (
         <Fragment>
-            <footer className="bg-primary bg-opacity-25 shadow-lg bg-gradient" style={{position:"absolute", right:"0", left:"0", bottom: "0"}}>
+            <footer className="bg-primary bg-opacity-25 shadow-lg bg-gradient" 
+                style={{position:"absolute", right:"0", left:"0", bottom: "0", minWidth: '620px'}}>
                <div className="container-fluid" >
                     <div className="row align-items-center">
                         <h6 className="col"> Proyecto final - Damian Takashima -&nbsp;

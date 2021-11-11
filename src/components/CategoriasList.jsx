@@ -77,7 +77,7 @@ export function CategoriasList({categorias}) {
     return (
     <Fragment>
         <div style={{padding:"0 0 40px"}}>
-            <p className="px-2 lead">
+            <p className="px-2 lead text-center">
             Seleccione alguna categoría, o déjelo a la suerte. &#127869;
             </p>
             <nav className="text-center">

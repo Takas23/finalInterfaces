@@ -12,8 +12,7 @@ code {
     monospace;
 }
 
-#receta {
+.receta {
   white-space: pre-line;
   text-align: left;
-  
 }

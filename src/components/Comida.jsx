@@ -5,7 +5,7 @@ const Comida = ({comidaProp}) => {
     return (
         <div className="text-center">
             <img 
-                className="invisible rounded"
+                className="invisible rounded "
                 src={comidaProp.strMealThumb}
                 alt='imagen de plato'
                 width="200"></img><br/>
@@ -15,9 +15,9 @@ const Comida = ({comidaProp}) => {
                 </small>
             </h3><br/>
             
-            <h4 className="invisible text-uppercase" >Receta  &#9997;</h4><br/>
+            <h4 className="invisible text-uppercase receta pl-5 container" ><u>Receta</u>  &#9997;</h4><br/>
             
-            <p id="receta" className="container border bg-secondary bg-opacity-10" 
+            <p id="receta" className="receta container border bg-secondary bg-opacity-10 p-3" 
                 > {comidaProp.strInstructions}
             </p>
 
