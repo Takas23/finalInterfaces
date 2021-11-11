@@ -40,5 +40,3 @@ export default App;
 
 
 
-// no carga el id al tocar la primer categoria
-// cuando se desactiva una categoria, la proxima busqueda la toma como activa

@@ -14,13 +14,7 @@ export function CategoriasList({categorias}) {
         getId();
     }, [activeCategories])   
 
- /*
-    var idConsulta = 0;
 
-    const setIdConsulta = (id) => {
-        idConsulta = id;
-    }
-*/
 // funciones que agregan y eliminan categorias a la lista de activas   
     const addCategory = (cat) => {
         setActiveCategories([...activeCategories, cat]);
@@ -53,18 +47,11 @@ export function CategoriasList({categorias}) {
 
 
 // funcion para activar o desactivar las categorias en donde se realiza la busqueda
-//a    function toggle(cat, callback) {
     function toggle(cat) {
         activeCategories.includes(cat) ? removeCategory(cat) : addCategory(cat);
- //a       callback();
-    }
-/*
-// consulta un id random de las categorias o pone el id en 0
-    function getId() {
-        activeCategories.length > 0 ? consultarEn(activeCategories) : setIdConsulta(0);
 
     }
-*/
+
 
         
 
